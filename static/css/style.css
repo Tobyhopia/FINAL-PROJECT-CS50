@@ -42,23 +42,23 @@ body {
   }
 }
 
-/* Logo */
+/* Logo - responsive with max size */
 .logo {
   display: block;
-  margin: 40px auto 30px auto;
-  max-width: 400px;
-  width: 90vw;
+  margin: 10px auto 10px auto;
+  max-width: 750px;
+  width: 300vw;
   user-select: none;
 }
 
 /* Press any key message */
 #start-message {
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Orbitron', sans-serif;
-  font-size: 3rem;
+  font-size: 4rem;
   color: white;
   text-align: center;
   user-select: none;
@@ -73,7 +73,7 @@ body {
   25%, 75% { opacity: 0; }
 }
 
-/* Buttons container, hidden by default */
+/* Buttons container, moved higher */
 .btn-container {
   display: none;
   flex-direction: column;
@@ -82,9 +82,9 @@ body {
   width: 100%;
   justify-content: center;
   position: fixed;
-  top: 60%;
+  top: 60%;               
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   z-index: 1000;
 }
 
@@ -92,8 +92,25 @@ body {
   display: flex;
 }
 
-/* Buttons */
-.play-btn, .credits-btn {
+/* Play button bigger */
+.play-btn {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #007BFF;
+  color: white;
+  border: 3px solid white;
+  padding: 16px 40px;   /* bigger padding */
+  font-size: 1.3rem;    /* bigger font */
+  border-radius: 8px;
+  cursor: pointer;
+  width: 240px;         /* wider */
+  text-align: center;
+  box-shadow: 0 0 0 2px #000 inset;
+  user-select: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Credits button normal size */
+.credits-btn {
   font-family: 'Press Start 2P', cursive;
   background-color: #007BFF;
   color: white;
