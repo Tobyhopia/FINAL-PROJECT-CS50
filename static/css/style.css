@@ -1,4 +1,4 @@
-/* Reset & base */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,74 +6,125 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: url('../images/background.png') no-repeat center center fixed;
+    font-family: 'Press Start 2P', cursive;
+    background: url("../images/background.png") no-repeat center center fixed;
     background-size: cover;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    color: white;
     text-align: center;
 }
 
-/* Title */
-h1 {
-    font-size: 4rem;
-    font-weight: bold;
-    color: #ffe97f;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
-    margin-bottom: 40px;
+/* Main container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-/* Buttons */
+/* Force logo size */
+.logo {
+    width: 500px;       /* Always aim for this size */
+    max-width: 90%;     /* Shrinks on small screens */
+    height: auto;       /* Maintain aspect ratio */
+}
+
+/* Buttons container */
 .btn-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    margin-top: 30px;
 }
 
+/* Base button style */
 .game-btn {
-    padding: 12px 25px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
+    font-family: 'Press Start 2P', cursive;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 3px solid #ffcc00;
     border-radius: 8px;
     cursor: pointer;
-    background-color: rgba(255, 215, 0, 0.9);
-    color: #333;
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.4);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 
+/* Hover effect */
 .game-btn:hover {
-    background-color: rgba(255, 240, 150, 1);
-    transform: scale(1.05);
+    background-color: #ffcc00;
+    color: black;
 }
 
-/* Petals animation */
+.petal, .carrot, .eggplant, .watermelon, .lemon {
+  position: absolute;
+  top: -50px;
+  width: 40px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall 10s linear infinite;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
 .petal {
-    position: absolute;
-    top: -50px;
-    width: 20px;
-    height: 20px;
-    background-color: pink;
-    border-radius: 50% 50% 50% 50%;
-    opacity: 0.8;
-    animation: fall 10s linear infinite;
+  background-image: url('../images/petal.png');
+}
+
+.carrot {
+  background-image: url('../images/carrot.png');
+}
+
+.eggplant {
+  background-image: url('../images/eggplant.png');
+}
+
+.watermelon {
+  background-image: url('../images/watermelon.png');
+}
+
+.lemon {
+  background-image: url('../images/lemon.png');
 }
 
 @keyframes fall {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 0.8;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(110vh) rotate(360deg);
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
 }
+
+
+.play-btn, .credits-btn {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(180deg, #00d4ff 0%, #0077ff 100%);
+    color: white;
+    border: 4px solid #00c3ff;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 180, 255, 0.9);
+    transition: all 0.15s ease-out;
+    image-rendering: pixelated;
+}
+
+.play-btn {
+    font-size: clamp(24px, 3vw, 36px);
+    padding: clamp(15px, 2vw, 30px) clamp(40px, 5vw, 80px);
+    min-width: clamp(200px, 25vw, 300px);
+}
+
+.credits-btn {
+    font-size: clamp(14px, 1.8vw, 20px);
+    padding: clamp(8px, 1.5vw, 12px) clamp(20px, 3vw, 40px);
+    min-width: clamp(120px, 15vw, 180px);
+}
+
+.play-btn:hover, .credits-btn:hover {
+    background: linear-gradient(180deg, #66e4ff 0%, #0099ff 100%);
+    box-shadow: 0 0 25px rgba(0, 204, 255, 1);
+    transform: scale(1.05);
+}
+

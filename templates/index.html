@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sunbloom Saga</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="{{ url_for('static', filename='audio/intro.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- Floating decorative elements -->
+    <div class="petal" style="left: 5%; animation-delay: 0s;"></div>
+    <div class="carrot" style="left: 20%; animation-delay: 1.5s;"></div>
+    <div class="eggplant" style="left: 35%; animation-delay: 3s;"></div>
+    <div class="watermelon" style="left: 50%; animation-delay: 4.5s;"></div>
+    <div class="lemon" style="left: 65%; animation-delay: 6s;"></div>
+    <div class="petal" style="left: 80%; animation-delay: 7.5s;"></div>
+    <div class="carrot" style="left: 95%; animation-delay: 9s;"></div>
+
+    <!-- Logo -->
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Sunbloom Saga Logo" class="logo">
+
+    <!-- Buttons -->
+    <div class="btn-container">
+        <a href="/play"><button class="play-btn">PLAY</button></a>
+        <a href="/credits"><button class="credits-btn">CREDITS</button></a>
+    </div>
+</body>
+</html>
