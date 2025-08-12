@@ -1,0 +1,79 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('../images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Title */
+h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #ffe97f;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+    margin-bottom: 40px;
+}
+
+/* Buttons */
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.game-btn {
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: rgba(255, 215, 0, 0.9);
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.4);
+    transition: all 0.2s ease-in-out;
+}
+
+.game-btn:hover {
+    background-color: rgba(255, 240, 150, 1);
+    transform: scale(1.05);
+}
+
+/* Petals animation */
+.petal {
+    position: absolute;
+    top: -50px;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border-radius: 50% 50% 50% 50%;
+    opacity: 0.8;
+    animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
